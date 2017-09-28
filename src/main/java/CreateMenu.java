@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CreateMenu {
@@ -17,8 +18,7 @@ public class CreateMenu {
         if (option == 1) {
 
             System.out.println("goto the Create board page");
-        }
-        else if (option == 2) {
+        } else if (option == 2) {
 
             System.out.println("go to the Create a new team page");
 
@@ -33,9 +33,18 @@ public class CreateMenu {
 
         Scanner in = new Scanner(System.in);
 
-        int option = in.nextInt();
 
-        chooseOptions(option);
+        try {
+
+
+            int option = in.nextInt();
+
+            chooseOptions(option);
+        }
+        catch(InputMismatchException e){
+
+            System.out.println("Enter a valid value of integer datatype");
+        }
 
 
     }
