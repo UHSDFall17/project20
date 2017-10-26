@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Card {
-
+    //createCard method
     public static void createCard() {
 
         String desc = "", comment = "";
@@ -33,14 +33,14 @@ public class Card {
                 Scanner in2 = new Scanner(System.in);
                 members[i] = in2.nextLine();
             }
+            // To get the date and time info of when the card is created
             Date dNow = new Date();
             SimpleDateFormat ft =
                     new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 
 
-            try
-
-            {
+            try {
+                // text file cardCreate to write the contents of card such as members, description and time create
                 FileWriter fw = new FileWriter("cardCreate.txt", true);
                 PrintWriter p = new PrintWriter(fw);
 
