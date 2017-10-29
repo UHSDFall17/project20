@@ -52,28 +52,27 @@ class demo
 		{	
 			//call to the login() function
 			login();
-			
-			//Display Menu
-			System.out.println("");
-			System.out.println(" ************Welcome to Trello************ ");
-			System.out.println("===========================================");
-			System.out.println("|              MENU SELECTION             |");
-			System.out.println("===========================================");
-			System.out.println("| Options:                                |");
-			System.out.println("|        1. Display Boards                |");
-			System.out.println("|        2. Create Board                  |");
-			System.out.println("|        3. Remove Board                  |");
-			System.out.println("|        4. Add Team                      |");
-			//System.out.println("|        5. Remove Board                  |");
-			System.out.println("|        5. Exit                          |");
-			System.out.println("===========================================");
+
 			Scanner scanner = new Scanner(System.in);
 			BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
-		
 		
 			int choice;
 			//Loop condtion for each of the menu
 			do{
+				System.out.println("");
+				System.out.println(" ************Welcome to Trello************ ");
+				System.out.println("===========================================");
+				System.out.println("|              MENU SELECTION             |");
+				System.out.println("===========================================");
+				System.out.println("| Options:                                |");
+				System.out.println("|        1. Display Boards                |");
+				System.out.println("|        2. Create Board                  |");
+				System.out.println("|        3. Remove Board                  |");
+				System.out.println("|        4. Add Team                      |");
+				//System.out.println("|        5. Remove Board                  |");
+				System.out.println("|        5. Exit                          |");
+				System.out.println("===========================================");
+				
 				String key = scanner.next();
 				choice = Integer.parseInt(key);
 				
@@ -153,8 +152,8 @@ class demo
 						
 							System.out.println("Board created: "+name);
 						*/
-						
-							//System.out.println(br);
+							System.out.println("");
+							System.out.println("Board added successfuly...!!!");
 							break;
 						
 					case 3: System.out.println("Board to be deleted");
@@ -172,9 +171,6 @@ class demo
 						String lineToRemove = scanner.next();
 						String currentLine;
 						
-						
-						
-
 						
 							while((currentLine = reader.readLine()) != null) 
 							{
@@ -210,9 +206,11 @@ class demo
 							//boolean successful = tempFile.renameTo(inputFile);
 						
 							//Call the add team module
+							System.out.println("");
+							System.out.println("Board deleted successfuly...!!!");
 							break;
 						
-					case 4: System.out.println("Add Team");
+					case 4: System.out.println("Rename Board");
 							//Call the add team module
 							break;
 						
