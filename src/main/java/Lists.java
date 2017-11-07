@@ -7,7 +7,48 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Card {
+public class Lists {
+
+
+    //createList Method
+    public static void createLists() {
+
+        String listTitle = "";
+        System.out.println("Enter the List Description");
+        Scanner in = new Scanner(System.in);
+        listTitle = in.next();
+        Date dNow = new Date();
+
+        SimpleDateFormat ft =
+                new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+
+        try {
+            // text file cardCreate to write the contents of card such as members, description and time create
+            FileWriter fw = new FileWriter("cardCreate.txt", true);
+            PrintWriter p = new PrintWriter(fw);
+
+
+            p.print("Card Details");
+
+
+            p.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
+
+            p.close();
+            System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
+
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+
+    }
+
+
+
+
+
     //createCard method
     public static void createCard() {
 
@@ -20,7 +61,7 @@ public class Card {
 
         Scanner in1 = new Scanner(System.in);
         comment = in1.next();
-        String members[] = new String[0];
+        String members[];
         try {
             System.out.println("3.Add Members");
             System.out.println("Enter the number of members you want to add");
