@@ -1,6 +1,4 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -12,7 +10,7 @@ public class Lists {
 
     //createList Method
     public static void createLists() {
-
+        int user_id = 1;
         String listTitle = "";
         System.out.println("Enter the List Description");
         Scanner in = new Scanner(System.in);
@@ -36,6 +34,17 @@ public class Lists {
             p.close();
             System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
 
+            System.out.println("Do you want to Create Card?y/n");
+            String ans = "";
+            Scanner o = new Scanner(System.in);
+            ans = o.next();
+            if (ans == "y") {
+                createCard();
+
+            } else {
+
+                System.exit(0);
+            }
 
         } catch (IOException ex) {
 
@@ -46,11 +55,13 @@ public class Lists {
     }
 
 
-
-
-
     //createCard method
     public static void createCard() {
+        try {
+            Scanner fileIn = new Scanner(new File("ListCreate.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
 
         String desc = "", comment = "";
         System.out.println("1. Enter Description");
@@ -112,7 +123,7 @@ public class Lists {
     public static void main(String[] args) {
 
 
-       // createCard();
+        // createCard();
 
         //Calling list method
 
