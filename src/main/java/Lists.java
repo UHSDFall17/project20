@@ -24,11 +24,11 @@ public class Lists {
 
         try {
             // text file cardCreate to write the contents of card such as members, description and time create
-            FileWriter fw = new FileWriter("cardCreate.txt", true);
+            FileWriter fw = new FileWriter("ListCreate.txt", true);
             PrintWriter p = new PrintWriter(fw);
 
 
-            p.print("Card Details");
+            p.print("List Details");
 
 
             p.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
@@ -112,6 +112,10 @@ public class Lists {
     public static void main(String[] args) {
 
 
-        createCard();
+       // createCard();
+
+        //Calling list method
+
+        createLists();
     }
 }
