@@ -9,6 +9,7 @@ public class Lists {
     static String desc = "";
     static String comment = "";
     static String members[];
+    static int val = 0;
 
     //createList Method
     public static void createLists() {
@@ -62,7 +63,6 @@ public class Lists {
     public static void createCard() {
 
 
-
         System.out.println("1. Enter Description");
         Scanner in = new Scanner(System.in);
         desc = in.next();
@@ -77,7 +77,27 @@ public class Lists {
 
             Scanner in1 = new Scanner(System.in);
             comment = in1.next();
-        } else {
+            val = 1;
+            if (val == 1) {
+                try {
+                    System.out.println("3.Add Members");
+                    System.out.println("Enter the number of members you want to add");
+                    Scanner in11 = new Scanner(System.in);
+                    int mem = in11.nextInt();
+
+
+                    members = new String[mem];
+                    for (int i = 0; i < mem; i++) {
+                        Scanner in2 = new Scanner(System.in);
+                        members[i] = in2.nextLine();
+                    }
+
+
+                } catch (InputMismatchException e) {
+                    System.out.println("enter value of integer data type");
+                }
+            }
+        } else if (ans.equals("n")) {
 
 
             try {
@@ -92,8 +112,6 @@ public class Lists {
                     Scanner in2 = new Scanner(System.in);
                     members[i] = in2.nextLine();
                 }
-
-
 
 
             } catch (InputMismatchException e) {
