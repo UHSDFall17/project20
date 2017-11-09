@@ -38,9 +38,8 @@ public class Lists {
             String ans = "";
             Scanner o = new Scanner(System.in);
             ans = o.next();
-            if (ans == "y") {
+            if (ans.equals("y")) {
                 createCard();
-
             } else {
 
                 System.exit(0);
@@ -57,11 +56,7 @@ public class Lists {
 
     //createCard method
     public static void createCard() {
-        try {
-            Scanner fileIn = new Scanner(new File("ListCreate.txt"));
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        }
+
 
         String desc = "", comment = "";
         System.out.println("1. Enter Description");
