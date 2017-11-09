@@ -6,7 +6,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lists {
-
+    static String desc = "";
+    static String comment = "";
+    static String members[];
 
     //createList Method
     public static void createLists() {
@@ -60,59 +62,69 @@ public class Lists {
     public static void createCard() {
 
 
-        String desc = "", comment = "";
+
         System.out.println("1. Enter Description");
         Scanner in = new Scanner(System.in);
         desc = in.next();
-        System.out.println("2.Add comment");
+        System.out.println("Do you want to add comment?y/n");
+        String ans = "";
+        Scanner input = new Scanner(System.in);
+        ans = input.next();
+        if (ans.equals("y")) {
+
+            System.out.println("2.Add comment");
 
 
-        Scanner in1 = new Scanner(System.in);
-        comment = in1.next();
-        String members[];
-        try {
-            System.out.println("3.Add Members");
-            System.out.println("Enter the number of members you want to add");
-            Scanner in11 = new Scanner(System.in);
-            int mem = in11.nextInt();
+            Scanner in1 = new Scanner(System.in);
+            comment = in1.next();
+        } else {
 
 
-            members = new String[mem];
-            for (int i = 0; i < mem; i++) {
-                Scanner in2 = new Scanner(System.in);
-                members[i] = in2.nextLine();
+            try {
+                System.out.println("3.Add Members");
+                System.out.println("Enter the number of members you want to add");
+                Scanner in11 = new Scanner(System.in);
+                int mem = in11.nextInt();
+
+
+                members = new String[mem];
+                for (int i = 0; i < mem; i++) {
+                    Scanner in2 = new Scanner(System.in);
+                    members[i] = in2.nextLine();
+                }
+
+
+
+
+            } catch (InputMismatchException e) {
+                System.out.println("enter value of integer data type");
             }
+        }
+        try {
             // To get the date and time info of when the card is created
             Date dNow = new Date();
             SimpleDateFormat ft =
                     new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 
 
-            try {
-                // text file cardCreate to write the contents of card such as members, description and time create
-                FileWriter fw = new FileWriter("cardCreate.txt", true);
-                PrintWriter p = new PrintWriter(fw);
+            // text file cardCreate to write the contents of card such as members, description and time create
+            FileWriter fw = new FileWriter("cardCreate.txt", true);
+            PrintWriter p = new PrintWriter(fw);
 
 
-                p.print("Card Details");
+            p.print("Card Details");
 
 
-                p.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
+            p.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
 
-                p.close();
-                System.out.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
-
-
-            } catch (IOException ex) {
-
-                ex.printStackTrace();
-            }
+            p.close();
+            System.out.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
 
 
-        } catch (InputMismatchException e) {
-            System.out.println("enter value of integer data type");
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
         }
-
 
     }
 
