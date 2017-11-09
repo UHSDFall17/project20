@@ -36,8 +36,8 @@ public class Lists {
 
             System.out.println("Do you want to Create Card?y/n");
             String ans = "";
-            Scanner o = new Scanner(System.in);
-            ans = o.next();
+            Scanner input = new Scanner(System.in);
+            ans = input.next();
             if (ans.equals("y")) {
 
                 // createCard method
