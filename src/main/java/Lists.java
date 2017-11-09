@@ -39,6 +39,8 @@ public class Lists {
             Scanner o = new Scanner(System.in);
             ans = o.next();
             if (ans.equals("y")) {
+
+                // createCard method
                 createCard();
             } else {
 
@@ -117,8 +119,6 @@ public class Lists {
 
     public static void main(String[] args) {
 
-
-        // createCard();
 
         //Calling list method
 
