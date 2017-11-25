@@ -13,48 +13,57 @@ public class Lists {
 
     //createList Method
     public static void createLists() {
-        int user_id = 1;
-        String listTitle = "";
-        System.out.println("Enter the List Description");
-        Scanner in = new Scanner(System.in);
-        listTitle = in.next();
-        Date dNow = new Date();
+        System.out.println("Do you want to create a new list");
+        Scanner choose = new Scanner(System.in);
 
-        SimpleDateFormat ft =
-                new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+        String option = choose.next();
 
-        try {
-            // text file cardCreate to write the contents of card such as members, description and time create
-            FileWriter fw = new FileWriter("ListCreate.txt", true);
-            PrintWriter p = new PrintWriter(fw);
+        if (option.equals("Y") || option.equals("y")) {
+            String listTitle = "";
+            System.out.println("Enter the List Description");
+            Scanner in = new Scanner(System.in);
+            listTitle = in.next();
+            Date dNow = new Date();
+
+            SimpleDateFormat ft =
+                    new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+
+            try {
+                // text file cardCreate to write the contents of card such as members, description and time create
+                FileWriter fw = new FileWriter("ListCreate.txt", true);
+                PrintWriter p = new PrintWriter(fw);
 
 
-            p.print("List Details");
+                p.print("List Details");
 
 
-            p.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
+                p.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
 
-            p.close();
-            System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
+                p.close();
+                System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
 
-            System.out.println("Do you want to Create Card?y/n");
-            String ans = "";
-            Scanner input = new Scanner(System.in);
-            ans = input.next();
-            if (ans.equals("y")) {
+                System.out.println("Do you want to Create Card?y/n");
+                String ans = "";
+                Scanner input = new Scanner(System.in);
+                ans = input.next();
+                if (ans.equals("y")) {
 
-                // createCard method
-                createCard();
-            } else {
+                    // createCard method
+                    createCard();
+                } else {
 
-                System.exit(0);
+                    System.exit(0);
+                }
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
             }
 
-        } catch (IOException ex) {
 
-            ex.printStackTrace();
+        } else if (option.equals("N") || option.equals("n")) {
+            System.exit(0);
         }
-
 
     }
 
