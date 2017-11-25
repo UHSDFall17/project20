@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -125,15 +127,25 @@ public class Lists {
 
             try {
                 System.out.println("3.Add Members");
-                System.out.println("Enter the number of members you want to add");
-                Scanner in11 = new Scanner(System.in);
-                int mem = in11.nextInt();
+                System.out.println("Do you want to add members");
+                Scanner opt = new Scanner(System.in);
+                String choose = opt.next();
+                if (choose.equals("Y") || choose.equals("y")) {
+                    System.out.println("Enter the number of members you want to add");
+                    Scanner in11 = new Scanner(System.in);
+                    int mem = in11.nextInt();
 
 
-                members = new String[mem];
-                for (int i = 0; i < mem; i++) {
-                    Scanner in2 = new Scanner(System.in);
-                    members[i] = in2.nextLine();
+                    members = new String[mem];
+                    for (int i = 0; i < mem; i++) {
+                        Scanner in2 = new Scanner(System.in);
+                        members[i] = in2.nextLine();
+                    }
+                } else if (choose.equals("N") || choose.equals("n")) {
+
+
+                    members = new String[]{""};
+
                 }
 
 
