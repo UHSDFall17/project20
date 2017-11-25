@@ -156,7 +156,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         //call the main function
-                        CreateBoards.createBoards();
+                        CreateBoards.createBoard();
                         break;
                     case 2:
                         createteam.CreateATeam();
