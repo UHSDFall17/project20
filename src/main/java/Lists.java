@@ -53,6 +53,8 @@ public class Lists {
                 } else {
 
                     System.exit(0);
+
+                    AddList_Menu.AddList_Menu_Choice();
                 }
 
             } catch (IOException ex) {
@@ -62,7 +64,9 @@ public class Lists {
 
 
         } else if (option.equals("N") || option.equals("n")) {
-            System.exit(0);
+            //System.exit(0);
+            AddList_Menu.AddList_Menu_Choice();
+
         }
 
     }
@@ -90,15 +94,25 @@ public class Lists {
             if (val == 1) {
                 try {
                     System.out.println("3.Add Members");
-                    System.out.println("Enter the number of members you want to add");
-                    Scanner in11 = new Scanner(System.in);
-                    int mem = in11.nextInt();
+                    System.out.println("Do you want to add members");
+                    Scanner opt = new Scanner(System.in);
+                    String choose = opt.next();
+                    if (choose.equals("Y") || choose.equals("y")) {
+                        System.out.println("Enter the number of members you want to add");
+                        Scanner in11 = new Scanner(System.in);
+                        int mem = in11.nextInt();
 
 
-                    members = new String[mem];
-                    for (int i = 0; i < mem; i++) {
-                        Scanner in2 = new Scanner(System.in);
-                        members[i] = in2.nextLine();
+                        members = new String[mem];
+                        for (int i = 0; i < mem; i++) {
+                            Scanner in2 = new Scanner(System.in);
+                            members[i] = in2.nextLine();
+                        }
+                    } else if (choose.equals("N") || choose.equals("n")) {
+
+
+                        members = new String[]{""};
+
                     }
 
 
@@ -126,6 +140,9 @@ public class Lists {
             } catch (InputMismatchException e) {
                 System.out.println("enter value of integer data type");
             }
+        } else {
+            System.out.println("Enter a valid option only");
+            System.exit(0);
         }
         try {
             // To get the date and time info of when the card is created
