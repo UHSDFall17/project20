@@ -1,0 +1,41 @@
+
+ID: pramit
+Admin Teams:
+Team Name: hello
+Team Name: SD20
+Team Name: second
+Team Name: chalega?
+Non Admin Teams:
+Name: Team Trello
+
+ID: sai
+Admin Teams:
+Non Admin Teams:
+Name: second
+Name: chalega?
+
+ID: harshit
+Admin Teams:
+Non Admin Teams:
+Name: second
+
+ID: hs
+Admin Teams:
+Team Name: SD
+Board: Software Design Board
+Board: Done
+Board: Doing
+Board: To Do
+Team Name: Team Trello
+Non Admin Teams:
+Name: hello
+Board: Trello Board
+Name: SD20
+
+ID: hs@dell.com
+Admin Teams:
+Non Admin Teams:
+
+ID: pra@sdef.com
+Admin Teams:
+Non Admin Teams:
