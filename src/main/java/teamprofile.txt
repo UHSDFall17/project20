@@ -38,3 +38,16 @@ Website: hello.com
 Description: sgdfgjkh
 Members:
 pramit
+
+Name: Team Trello Admin: hs@dell.com
+Website: www.trello.com
+Description: Project Management Application
+Members:
+hs@dell.com
+
+Name: Sample Team Admin: hs@dell.com
+Website: www.sampleteam.com
+Description: Sample Team
+Members:
+abc@dummy.com
+hs@dell.com
