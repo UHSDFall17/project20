@@ -194,7 +194,7 @@ public class Main {
                         break;
                     case 2:
                         if(inpUser.contains(".edu")||inpUser.contains("dell.com")||inpUser.contains("amazon.com"))
-                            createteam.CreateATeam();
+                        createteam.CreateATeam();
                         else
                             System.out.println("You are not allowed to create a team.");
                         break;
