@@ -193,7 +193,10 @@ public class Main {
                         CreateBoards.createBoard();
                         break;
                     case 2:
+                        if(inpUser.contains(".edu")||inpUser.contains("dell.com")||inpUser.contains("amazon.com"))
                         createteam.CreateATeam();
+                        else
+                            System.out.println("You are not allowed to create a team.");
                         break;
                     case 3:
                         CreateBoards.displayBoard();

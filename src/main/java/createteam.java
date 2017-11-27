@@ -44,6 +44,7 @@ public class createteam {
         System.out.println("|        2. Description                   |");
         System.out.println("|        3. Add Member                    |");
         System.out.println("|        4. Remove Member                 |");
+        System.out.println("|        5. Cancel                        |");
         System.out.println("===========================================");
         int value = sc.nextInt();
         // Switching on the value given from user
@@ -195,6 +196,8 @@ public class createteam {
                 // And rename tmp file's name to old file name
                 File nile = new File(tame);
                 nile.renameTo(oile);
+                break;
+            case 5:
                 break;
             default:
                 System.out.println("Invalid selection");
