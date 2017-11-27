@@ -10,9 +10,3 @@ harshit
 
 hs
 hs
-
-hs@dell.com
-hs
-
-pra@sdef.com
-pra
