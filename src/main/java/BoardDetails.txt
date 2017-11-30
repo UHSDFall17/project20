@@ -8,6 +8,6 @@ Board: Software Design Board Team: SD
 Board: new board Team: pramit team
 
 Board: Board1 Team: Team Trello
-List: I am tired
-Card : really board!!!
+List: Demo List
+Card : Demo Card
 List: List test
