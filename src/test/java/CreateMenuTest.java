@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class CreateMenuTest {
 
-    private CreateMenu cm = new CreateMenu();
+   /* private CreateMenu cm = new CreateMenu();
 
 
     @Test
@@ -22,6 +22,6 @@ public class CreateMenuTest {
         assertTrue(file.exists());
 
     }
-
+*/
 
 }
