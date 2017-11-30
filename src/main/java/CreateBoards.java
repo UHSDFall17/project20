@@ -93,7 +93,7 @@ class CreateBoards {
         try {	//String name = reader1.readLine();
             //System.out.println(name);
             FileWriter writer = new FileWriter("BoardDetails.txt", true);
-            writer.write("Board: " + board+" "+"Team: "+teams [s-1]+"\n");
+            writer.write("\nBoard: " + board+" "+"Team: "+teams [s-1]+"\n");
             //writer.write("\r\n");   // write new line
             //writer.write("Good Bye!");
             writer.close();
