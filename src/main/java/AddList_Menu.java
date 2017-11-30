@@ -41,10 +41,4 @@ public class AddList_Menu {
 
         }
     }
-
-    public static void main(String[] args) {
-
-        AddList_Menu_Choice();
-
-    }
 }
