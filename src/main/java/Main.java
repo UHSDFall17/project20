@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main {
+public class Main  {
     static String inpUser;
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
@@ -180,7 +180,6 @@ public class Main {
 
     private static void chooseOptions() {
         int option;
-
         try {
             do {
                 displayOptions();
@@ -200,7 +199,15 @@ public class Main {
                         break;
                     case 3:
                         CreateBoards.displayBoard();
-                        //System.out.println("Go to Display Board Page");
+                        System.out.println("Do you want to edit Board?");
+                        Scanner choose = new Scanner(System.in);
+                        String options = choose.next();
+                        if (options.equals("Y") || options.equals("y")) {
+                            System.out.println("Enter the board to edit:");
+                            Scanner sc = new Scanner(System.in);
+                            String Boardname = sc.nextLine();
+                            AddList_Menu.AddList_Menu_Choice(Boardname);
+                        }
                         break;
                     case 4:
                         createteam.displayTeam();
@@ -210,6 +217,7 @@ public class Main {
                         break;
                     case 6:
                         CreateBoards.deleteBoard();
+                        break;
                     case 7:
                         System.out.println("Exit selected");
                         break;
@@ -235,12 +243,11 @@ public class Main {
         System.out.println("|        4. Display Team                  |");
         System.out.println("|        5. Edit a Team                   |");
         System.out.println("|        6. Close a Board                 |");
-        System.out.println("|        7. Exit                          |");
+        System.out.println("|        7. Add a List                    |");
+        System.out.println("|        8. Exit                          |");
         System.out.println("===========================================");
         System.out.println("Enter your option here:");
-
     }
-
 }
 
 
