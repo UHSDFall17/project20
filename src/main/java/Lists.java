@@ -10,34 +10,96 @@ public class Lists {
     static String comment = "";
     static String members[];
     static int val = 0;
+    static String TeamChoose;
+    private static Date dNow;
+    private static Date card_dNow;
+
+    private static String cardDesc;
+    private static String option;
+    static boolean is_List_Created;
+    static boolean is_Card_Created;
+
 
     //createList Method
-    public static void createLists() {
+    public static boolean createLists() {
+
         System.out.println("Do you want to create a new list");
         Scanner choose = new Scanner(System.in);
 
-        String option = choose.next();
+        option = choose.next();
+
 
         if (option.equals("Y") || option.equals("y")) {
+
+            CreateBoards.displayBoard();
+            System.out.println("Enter the board to add a list:");
+            Scanner sc = new Scanner(System.in);
+
+            String Boardname = sc.nextLine();
             String listTitle = "";
             System.out.println("Enter the List Description");
             Scanner in = new Scanner(System.in);
             listTitle = in.next();
-            Date dNow = new Date();
+            dNow = new Date();
 
             SimpleDateFormat ft =
                     new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 
             try {
+                String oldFileName = "BoardDetails.txt";
+                String tmpFileName = "tmp_try.txt";
+
+                BufferedReader br = null;
+                BufferedWriter bw = null;
+                try {
+                    br = new BufferedReader(new FileReader(oldFileName));
+                    bw = new BufferedWriter(new FileWriter(tmpFileName));
+                    String line;
+                    boolean f = false;
+                    while ((line = br.readLine()) != null) {
+                        bw.write(line + "\n");
+                        if (line.equals("Board: " + Boardname))
+                            f = true;
+                        if (f) {
+                            bw.write("List: " + desc + "\n");
+                            f = false;
+                        }
+
+                    }
+                } catch (Exception e) {
+                    is_List_Created = false;
+                    return is_List_Created;
+                } finally {
+                    try {
+                        if (br != null)
+                            br.close();
+                    } catch (IOException e) {
+                        //
+                    }
+                    try {
+                        if (bw != null)
+                            bw.close();
+                    } catch (IOException e) {
+                        //
+                    }
+                }
+                // Once everything is complete, delete old file..
+                File oldFile = new File(oldFileName);
+                oldFile.delete();
+
+                // And rename tmp file's name to old file name
+                File newFile = new File(tmpFileName);
+                newFile.renameTo(oldFile);
+
                 // text file cardCreate to write the contents of card such as members, description and time create
-                FileWriter fw = new FileWriter("ListCreate.txt", true);
+                FileWriter fw = new FileWriter("BoardDetails.txt", true);
                 PrintWriter p = new PrintWriter(fw);
 
 
                 p.print("List Details");
 
 
-                p.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
+                p.println("Title: " + listTitle + ", Created at: " + ft.format(dNow));
 
                 p.close();
                 System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));
@@ -52,9 +114,9 @@ public class Lists {
 
                     // createCard method
                     createCardUnderList();
+
                 } else {
 
-                    System.exit(0);
 
                     AddList_Menu.AddList_Menu_Choice();
                 }
@@ -71,57 +133,27 @@ public class Lists {
 
         }
 
+        return is_List_Created;
     }
 
     public static void createCardUnderList() {
 
-            System.out.println("1. Enter Description");
-            Scanner in = new Scanner(System.in);
-            desc = in.next();
-            System.out.println("Do you want to add comment?y/n");
-            String ans = "";
-            Scanner input = new Scanner(System.in);
-            ans = input.next();
-            if (ans.equals("y")) {
+        System.out.println("1. Enter Description");
+        Scanner in = new Scanner(System.in);
+        cardDesc = in.next();
+        System.out.println("Do you want to add comment?y/n");
+        String ans = "";
+        Scanner input = new Scanner(System.in);
+        ans = input.next();
+        if (ans.equals("y")) {
 
-                System.out.println("2.Add comment");
-
-
-                Scanner in1 = new Scanner(System.in);
-                comment = in1.next();
-                val = 1;
-                if (val == 1) {
-                    try {
-                        System.out.println("3.Add Members");
-                        System.out.println("Do you want to add members");
-                        Scanner opt = new Scanner(System.in);
-                        String choose = opt.next();
-                        if (choose.equals("Y") || choose.equals("y")) {
-                            System.out.println("Enter the number of members you want to add");
-                            Scanner in11 = new Scanner(System.in);
-                            int mem = in11.nextInt();
+            System.out.println("2.Add comment");
 
 
-                            members = new String[mem];
-                            for (int i = 0; i < mem; i++) {
-                                Scanner in2 = new Scanner(System.in);
-                                members[i] = in2.nextLine();
-                            }
-                        } else if (choose.equals("N") || choose.equals("n")) {
-
-
-                            members = new String[]{""};
-
-                        }
-
-
-                    } catch (InputMismatchException e) {
-                        System.out.println("enter value of integer data type");
-                    }
-                }
-            } else if (ans.equals("n")) {
-
-
+            Scanner in1 = new Scanner(System.in);
+            comment = in1.next();
+            val = 1;
+            if (val == 1) {
                 try {
                     System.out.println("3.Add Members");
                     System.out.println("Do you want to add members");
@@ -149,53 +181,129 @@ public class Lists {
                 } catch (InputMismatchException e) {
                     System.out.println("enter value of integer data type");
                 }
-            } else {
-                System.out.println("Enter a valid option only");
-                AddList_Menu.AddList_Menu_Choice();
             }
+        } else if (ans.equals("n")) {
+
+
             try {
-                // To get the date and time info of when the card is created
-                Date dNow = new Date();
-                SimpleDateFormat ft =
-                        new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+                System.out.println("3.Add Members");
+                System.out.println("Do you want to add members");
+                Scanner opt = new Scanner(System.in);
+                String choose = opt.next();
+                if (choose.equals("Y") || choose.equals("y")) {
+                    System.out.println("Enter the number of members you want to add");
+                    Scanner in11 = new Scanner(System.in);
+                    int mem = in11.nextInt();
 
 
-                // text file cardCreate to write the contents of card such as members, description and time create
-                FileWriter fw = new FileWriter("cardCreate.txt", true);
-                PrintWriter p = new PrintWriter(fw);
+                    members = new String[mem];
+                    for (int i = 0; i < mem; i++) {
+                        Scanner in2 = new Scanner(System.in);
+                        members[i] = in2.nextLine();
+                    }
+                } else if (choose.equals("N") || choose.equals("n")) {
 
 
-                p.print("Card Details");
+                    members = new String[]{""};
+
+                }
 
 
-                p.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
-
-                p.close();
-                System.out.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
-                System.out.println();
-                System.out.println("A New Card has been Added!");
-                System.out.println();
-                System.out.println();
-                AddList_Menu.AddList_Menu_Choice();
-
-            } catch (IOException ex) {
-
-                ex.printStackTrace();
+            } catch (InputMismatchException e) {
+                System.out.println("enter value of integer data type");
             }
+        } else {
+            System.out.println("Enter a valid option only");
+            AddList_Menu.AddList_Menu_Choice();
+        }
+        try {
+            // To get the date and time info of when the card is created
+            card_dNow = new Date();
+            SimpleDateFormat ft =
+                    new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+
+
+            // text file cardCreate to write the contents of card such as members, description and time create
+            FileWriter fw = new FileWriter("BoardDetails.txt", true);
+            /*PrintWriter p = new PrintWriter(fw);
+
+
+            p.print("Card Details");
+
+
+            p.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
+
+            p.close();*/
+            String oldFileName = "BoardDetails.txt";
+            String tmpFileName = "tmp_try.txt";
+
+            BufferedReader br = null;
+            BufferedWriter bw = null;
+
+            try {
+                br = new BufferedReader(new FileReader(oldFileName));
+                bw = new BufferedWriter(new FileWriter(tmpFileName));
+                String line;
+                boolean f = false;
+                while ((line = br.readLine()) != null) {
+                    bw.write(line + "\n");
+                    if (line.equals(": " + Main.inpUser))
+                        f = true;
+                    if (f == true && line.equals("Admin Teams:")) {
+                        bw.write("Card : " + cardDesc + "\n");
+                        f = false;
+                    }
+
+                }
+            } catch (Exception e) {
+                return;
+            } finally {
+                try {
+                    if (br != null)
+                        br.close();
+                } catch (IOException e) {
+                    //
+                }
+                try {
+                    if (bw != null)
+                        bw.close();
+                } catch (IOException e) {
+                    //
+                }
+            }
+            // Once everything is complete, delete old file..
+            File oldFile = new File(oldFileName);
+            oldFile.delete();
+
+            // And rename tmp file's name to old file name
+            File newFile = new File(tmpFileName);
+            newFile.renameTo(oldFile);
+            System.out.println("Description: " + cardDesc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(card_dNow));
+            System.out.println();
+            System.out.println("A New Card has been Added!");
+            System.out.println();
+            System.out.println();
+            AddList_Menu.AddList_Menu_Choice();
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
 
     }
 
     //createCard method
-    public static void createCard() {
+    public static boolean createCard() {
         System.out.println("Do you want to create a new Card");
         Scanner chooser = new Scanner(System.in);
 
         String option = chooser.next();
 
         if (option.equals("Y") || option.equals("y")) {
+            is_Card_Created = true;
             System.out.println("1. Enter Description");
             Scanner in = new Scanner(System.in);
-            desc = in.next();
+            cardDesc = in.next();
             System.out.println("Do you want to add comment?y/n");
             String ans = "";
             Scanner input = new Scanner(System.in);
@@ -273,23 +381,23 @@ public class Lists {
             }
             try {
                 // To get the date and time info of when the card is created
-                Date dNow = new Date();
+                card_dNow = new Date();
                 SimpleDateFormat ft =
                         new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 
 
                 // text file cardCreate to write the contents of card such as members, description and time create
-                FileWriter fw = new FileWriter("cardCreate.txt", true);
+                FileWriter fw = new FileWriter("BoardDetails.txt", true);
                 PrintWriter p = new PrintWriter(fw);
 
 
                 p.print("Card Details");
 
 
-                p.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
+                p.println("Description: " + cardDesc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(card_dNow));
 
                 p.close();
-                System.out.println("Description: " + desc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(dNow));
+                System.out.println("Description: " + cardDesc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(card_dNow));
 
                 System.out.println("A New Card has been Added!");
                 System.out.println();
@@ -303,17 +411,12 @@ public class Lists {
             }
         } else if (option.equals("N") || option.equals("n")) {
             //System.exit(0);
+            is_Card_Created = false;
+
             AddList_Menu.AddList_Menu_Choice();
 
         }
+        return is_Card_Created;
     }
 
-
-    public static void main(String[] args) {
-
-
-        //Calling list method
-
-        createLists();
-    }
 }
