@@ -1,10 +1,13 @@
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 
 public class AddList_Menu {
 
-    public static void AddList_Menu_Choice() {
+    public static void AddList_Menu_Choice(String Boardname) {
 
         //Option to choose from
         System.out.println("*******************************************************");
@@ -28,10 +31,37 @@ public class AddList_Menu {
         // Switch case for choosing option
         switch (option) {
             case 1:
-                Lists.createLists();
+
+                Lists.createLists(Boardname);
                 break;
             case 2:
-               // Lists.createCard();
+
+                boolean found = false;
+                FileReader fr1 = null;
+                try {
+                    fr1 = new FileReader("BoardDetails.txt");
+                    BufferedReader br = new BufferedReader(fr1);
+                    String str;
+                    while ((str = br.readLine()) != null) {
+                        if (str.contains("Board: " + Boardname))
+                            found = true;
+                        if (found == true && str.contains("List:")) {
+                            System.out.println(str);
+                            if (str.length() == 0)
+                                break;
+                        }
+                    }
+                    br.close();
+                    if (found == false)
+                        System.out.println("Board not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Enter a list to add card:");
+                Scanner c = new Scanner(System.in);
+                String l = c.nextLine();
+                Lists.createCardUnderList(l);
+                break;
             case 3:
                 System.out.println("Exit selected");
                 break;
