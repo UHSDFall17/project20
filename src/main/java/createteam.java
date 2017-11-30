@@ -239,9 +239,12 @@ public class createteam {
         int s = sc.nextInt();
         displayTeamProfile(teams[s-1]);
 
-        return true;
+        return foun;
     }
-    public static void displayTeamProfile(String tname){
+
+
+
+    public static boolean displayTeamProfile(String tname){
         boolean found = false;
         FileReader fr = null;
         try {
@@ -263,39 +266,9 @@ public class createteam {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return found;
     }
     public static boolean addMembers(String teamname) {
-        /*String [] teams = new String[100];
-        System.out.println("Select a team to add members: ");
-        boolean found = false;
-        FileReader fr = null;
-        try {
-            fr = new FileReader("DB.txt");
-            BufferedReader br = new BufferedReader(fr);
-            String str;
-            int i = 0;
-
-            while ((str = br.readLine()) != null) {
-                if (str.equals("ID: " + Main.inpUser))
-                    found = true;
-                if (found == true && str.contains("Team Name: ")) {
-                    String[] parts = str.split(": ");
-                    teams[i] = parts[1];
-                    i++;
-                    System.out.println(i+")"+parts[1]);
-                }
-                if (found == true && str.length() == 0)
-                    break;
-            }
-            br.close();
-            if (found == false)
-                System.out.println("Teams not found");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Scanner sc = new Scanner(System.in);
-        int op = sc.nextInt();*/
         System.out.println("Enter the ID of the member to be added");
         Scanner sc = new Scanner(System.in);
         String idname = sc.next();
