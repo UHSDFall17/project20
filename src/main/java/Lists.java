@@ -21,7 +21,7 @@ public class Lists {
 
 
     //createList Method
-    public static boolean createLists() {
+    public static boolean createLists(String Boardname) {
 
         System.out.println("Do you want to create a new list");
         Scanner choose = new Scanner(System.in);
@@ -31,11 +31,6 @@ public class Lists {
 
         if (option.equals("Y") || option.equals("y")) {
 
-            CreateBoards.displayBoard();
-            System.out.println("Enter the board to add a list:");
-            Scanner sc = new Scanner(System.in);
-
-            String Boardname = sc.nextLine();
             String listTitle = "";
             System.out.println("Enter the List Description");
             Scanner in = new Scanner(System.in);
@@ -80,7 +75,7 @@ public class Lists {
                     } else {
 
 
-                        AddList_Menu.AddList_Menu_Choice();
+                        AddList_Menu.AddList_Menu_Choice(Boardname);
                     }
                 } catch (Exception e) {
                     is_List_Created = false;
@@ -122,7 +117,7 @@ public class Lists {
 
         } else if (option.equals("N") || option.equals("n")) {
             //System.exit(0);
-            AddList_Menu.AddList_Menu_Choice();
+            AddList_Menu.AddList_Menu_Choice(Boardname);
 
         }
 
@@ -133,7 +128,7 @@ public class Lists {
 
         System.out.println("1. Enter Description");
         Scanner in = new Scanner(System.in);
-        cardDesc = in.next();
+        cardDesc = in.nextLine();
         /*System.out.println("Do you want to add comment?y/n");
         String ans = "";
         Scanner input = new Scanner(System.in);
