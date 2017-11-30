@@ -410,7 +410,6 @@ public class createteam {
                     bw.write("Team Name: " + name+"\n");
                     f = false;
                 }
-
             }
         } catch (Exception e) {
             return;
@@ -462,17 +461,17 @@ public class createteam {
                     displayTeamProfile(name);
                     break;
                 case 2:
-                    System.out.println("Boards from harshit code");
+                    CreateBoards.displayBoard();
                     break;
                 case 3:
                     //we call this function to add members to the textfile.
                     addMembers(name);
                     break;
                 case 4:
-                    System.out.println("Add board from harshit code");
+                    CreateBoards.createBoard();
                     break;
                 case 5:
-                    System.out.println("remove from the file of boards");
+                    CreateBoards.deleteBoard();
                     break;
                 case 6:
                     System.out.println("Exit selected");

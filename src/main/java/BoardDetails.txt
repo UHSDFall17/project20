@@ -1,13 +1,6 @@
-Board: Done Team: SD
-List: DandD
-Card : this
-List: hello
 
-Board: Software Design Board Team: SD
+Board: trello board Team: Team20
+List: trello list
+Card : trello card
 
-Board: new board Team: pramit team
-
-Board: Board1 Team: Team Trello
-List: I am tired
-Card : really board!!!
-List: List test
+Board: demo board Team: trello team

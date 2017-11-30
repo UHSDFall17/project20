@@ -1,59 +1,30 @@
 
-ID: pramit
+ID: sai@uh.edu
 Admin Teams:
-Team Name: hello
-Team Name: SD20
-Team Name: second
-Team Name: chalega?
+Team Name: trello team
+Board: demo board
+Team Name: Team20
 Non Admin Teams:
-Name: Team Trello
 
-ID: sai
+ID: pramit@uh.edu
 Admin Teams:
 Non Admin Teams:
-Name: second
-Name: chalega?
+Name: Team20
 
-ID: harshit
-Admin Teams:
-Non Admin Teams:
-Name: second
-
-ID: hs@dell.com
-Admin Teams:
-Team Name: SD
-Board: Software Design Board
-Board: Done
-Board: Doing
-Board: To Do
-Team Name: Team Trello
-Board: Board1
-Non Admin Teams:
-Name: hello
-Board: Trello Board
-Name: SD20
-
-ID: pra@sdef.com
+ID: harshit@uh.edu
 Admin Teams:
 Non Admin Teams:
 
-ID: phshah@uh.edu
-Admin Teams:
-Team Name: pramit team
-Board: new board
-Non Admin Teams:
-Name: pramit team
-
-ID: xyz@uh.edu
+ID: sai@gmail.com
 Admin Teams:
 Non Admin Teams:
-
-ID: abc@dummy.com
-Admin Teams:
-Non Admin Teams:
-Name: Sample Team
 
 ID: pramit@gmail.com
 Admin Teams:
 Non Admin Teams:
-Name: pramit team
+Name: trello team
+
+ID: harshit@gmail.com
+Admin Teams:
+Non Admin Teams:
+Name: Team20

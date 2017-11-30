@@ -191,22 +191,42 @@ public class Main  {
                     case 3:
                         CreateBoards.displayBoard();
                         int opt;
-                       // Scanner in = new Scanner(System.in);
+                        Scanner inp = new Scanner(System.in);
+
                         try {
                             do {
                                 System.out.println("===========================================");
                                 System.out.println("|           WELCOME TO TRELLO             |");
                                 System.out.println("===========================================");
                                 System.out.println("| Options:                                |");
-                                System.out.println("|        1. Login                         |");
-                                System.out.println("|        2. Sign up                       |");
+                                System.out.println("|        1. Edit Board                    |");
+                                System.out.println("|        2. display details               |");
                                 System.out.println("|        3. Exit                          |");
                                 System.out.println("===========================================");
                                 System.out.println("Enter your option here:");
 
-                                opt = in.nextInt();
+                                opt = inp.nextInt();
                                 switch (opt){
-
+                                    case 1:
+                                        CreateBoards.displayBoard();
+                                        System.out.println("Enter the board to edit:");
+                                        Scanner sc = new Scanner(System.in);
+                                        String Boardname = sc.nextLine();
+                                        AddList_Menu.AddList_Menu_Choice(Boardname);
+                                        break;
+                                    case 2:
+                                        CreateBoards.displayBoard();
+                                        System.out.println("Enter the board for details:");
+                                        Scanner sc1 = new Scanner(System.in);
+                                        String Boardname1 = sc1.nextLine();
+                                        Lists.display(Boardname1);
+                                        break;
+                                    case 3:
+                                        System.out.println("Exit");
+                                        break;
+                                    default:
+                                        System.out.println("Please choose a valid option");
+                                        break;
                                 }
                             }while (opt != 3);
                         }
@@ -215,15 +235,6 @@ public class Main  {
                             //chooseOptions();
                             trelloWelcome();
                             }
-                        System.out.println("Do you want to edit Board?");
-                        Scanner choose = new Scanner(System.in);
-                        String options = choose.next();
-                        if (options.equals("Y") || options.equals("y")) {
-                            System.out.println("Enter the board to edit:");
-                            Scanner sc = new Scanner(System.in);
-                            String Boardname = sc.nextLine();
-                            AddList_Menu.AddList_Menu_Choice(Boardname);
-                        }
                         break;
                     case 4:
                         createteam.displayTeam();
@@ -259,8 +270,7 @@ public class Main  {
         System.out.println("|        4. Display Team                  |");
         System.out.println("|        5. Edit a Team                   |");
         System.out.println("|        6. Close a Board                 |");
-        System.out.println("|        7. Add a List                    |");
-        System.out.println("|        8. Exit                          |");
+        System.out.println("|        7. Exit                          |");
         System.out.println("===========================================");
         System.out.println("Enter your option here:");
     }

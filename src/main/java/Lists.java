@@ -19,6 +19,30 @@ public class Lists {
     static boolean is_List_Created;
     static boolean is_Card_Created;
 
+    public static boolean display(String Boardname){
+        boolean found = false;
+        FileReader fr1 = null;
+        try {
+            fr1 = new FileReader("BoardDetails.txt");
+            BufferedReader br = new BufferedReader(fr1);
+            String str;
+            while ((str = br.readLine()) != null) {
+                if (str.contains("Board: " + Boardname))
+                    found = true;
+                if (found) {
+                    System.out.println(str);
+                    if (str.length() == 0)
+                        break;
+                }
+            }
+            br.close();
+            if (!found)
+                System.out.println("Team not found");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
 
     //createList Method
     public static boolean createLists(String Boardname) {

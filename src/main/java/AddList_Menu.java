@@ -45,14 +45,14 @@ public class AddList_Menu {
                     while ((str = br.readLine()) != null) {
                         if (str.contains("Board: " + Boardname))
                             found = true;
-                        if (found == true && str.contains("List:")) {
+                        if (found && str.contains("List:")) {
                             System.out.println(str);
                             if (str.length() == 0)
                                 break;
                         }
                     }
                     br.close();
-                    if (found == false)
+                    if (!found)
                         System.out.println("Board not found");
                 } catch (IOException e) {
                     e.printStackTrace();

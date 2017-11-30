@@ -1,59 +1,14 @@
 
-Name: chalega? Admin: pramit
-Website: I hope so
-Description: please
+Name: Team20 Admin: sai@uh.edu
+Website: team20.com
+Description: team20 trello
 Members:
-sai
-pramit
+harshit@gmail.com
+pramit@uh.edu
+sai@uh.edu
 
-Name: second Admin: pramit
-Website: second.com
-Description: this is the new desc
+Name: trello team Admin: sai@uh.edu
+Website: ttnew.com
+Description: trello project
 Members:
-harshit
-pramit
-
-Name: Team Trello Admin: hs
-Website: www.google.com
-Description: Project Management 
-Members:
-pramit
-hs
-
-Name: SD Admin: hs
-Website: asfse
-Description: ABCD
-Members:
-hs
-
-Name: SD20 Admin: pramit
-Website: sd20.com
-Description: Software Design team 20
-Members:
-hs
-pramit
-
-Name: hello Admin: pramit
-Website: hello.com
-Description: sgdfgjkh
-Members:
-pramit
-
-Name: Team Trello Admin: hs@dell.com
-Website: www.trello.com
-Description: Project Management Application
-Members:
-hs@dell.com
-
-Name: Sample Team Admin: hs@dell.com
-Website: www.sampleteam.com
-Description: Sample Team
-Members:
-abc@dummy.com
-hs@dell.com
-
-Name: pramit team Admin: phshah@uh.edu
-Website: team.com
-Description: test team
-Members:
-pramit@gmail.com
+sai@uh.edu
