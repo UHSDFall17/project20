@@ -31,7 +31,7 @@ public class AddList_Menu {
                 Lists.createLists();
                 break;
             case 2:
-                Lists.createCard();
+               // Lists.createCard();
             case 3:
                 System.out.println("Exit selected");
                 break;
