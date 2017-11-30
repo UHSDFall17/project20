@@ -19,7 +19,7 @@ Admin Teams:
 Non Admin Teams:
 Name: second
 
-ID: hs
+ID: hs@dell.com
 Admin Teams:
 Team Name: SD
 Board: Software Design Board
@@ -27,16 +27,11 @@ Board: Done
 Board: Doing
 Board: To Do
 Team Name: Team Trello
+Board: Board1
 Non Admin Teams:
 Name: hello
 Board: Trello Board
 Name: SD20
-
-ID: hs@dell.com
-Admin Teams:
-Team Name: Sample Team
-Team Name: Team Trello
-Non Admin Teams:
 
 ID: pra@sdef.com
 Admin Teams:
@@ -44,7 +39,10 @@ Non Admin Teams:
 
 ID: phshah@uh.edu
 Admin Teams:
+Team Name: pramit team
+Board: new board
 Non Admin Teams:
+Name: pramit team
 
 ID: xyz@uh.edu
 Admin Teams:
@@ -54,3 +52,8 @@ ID: abc@dummy.com
 Admin Teams:
 Non Admin Teams:
 Name: Sample Team
+
+ID: pramit@gmail.com
+Admin Teams:
+Non Admin Teams:
+Name: pramit team
