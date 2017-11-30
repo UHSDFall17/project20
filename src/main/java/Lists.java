@@ -63,20 +63,7 @@ public class Lists {
                     System.out.println("A new List has been Created!!");
                     System.out.println();
 
-                    System.out.println("Do you want to Create Card?y/n");
-                    String ans = "";
-                    Scanner input = new Scanner(System.in);
-                    ans = input.next();
-                    if (ans.equals("y")) {
 
-                        // createCard method
-                        createCardUnderList(listTitle);
-
-                    } else {
-
-
-                        AddList_Menu.AddList_Menu_Choice(Boardname);
-                    }
                 } catch (Exception e) {
                     is_List_Created = false;
                     return is_List_Created;
@@ -113,7 +100,19 @@ public class Lists {
                 p.close();
                 System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));*/
 
+            System.out.println("Do you want to Create Card?y/n");
+            String ans = "";
+            Scanner input = new Scanner(System.in);
+            ans = input.next();
+            if (ans.equals("y")) {
+                // createCard method
+                createCardUnderList(listTitle);
 
+            } else {
+
+
+                AddList_Menu.AddList_Menu_Choice(Boardname);
+            }
 
         } else if (option.equals("N") || option.equals("n")) {
             //System.exit(0);
@@ -124,7 +123,7 @@ public class Lists {
         return is_List_Created;
     }
 
-    public static void createCardUnderList(String list) {
+    public static boolean createCardUnderList(String list) {
 
         System.out.println("1. Enter Description");
         Scanner in = new Scanner(System.in);
@@ -170,7 +169,7 @@ public class Lists {
                 }
             }
         } catch (Exception e) {
-            return;
+            System.out.println("File not found");
         } finally {
             try {
                 if (br != null)
@@ -192,7 +191,7 @@ public class Lists {
         // And rename tmp file's name to old file name
         File newFile = new File(tmpFileName);
         newFile.renameTo(oldFile);
-
+        return true;
     }
     //createCard method
   /*  public static boolean createCard() {

@@ -12,10 +12,10 @@ public class createteamTest {
     public void editTeam() throws Exception {
     }*/
 
-    @Test
+  /*  @Test
     public void displayTeam() throws Exception {
         assertTrue(ct.displayTeam());
-    }
+    }*/
 
     @Test
     public void displayTeamProfile() throws Exception {

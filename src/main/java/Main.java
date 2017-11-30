@@ -106,15 +106,6 @@ public class Main  {
 
                         } else
                             System.out.println("Invalid Email ID");
-               /* Console console = System.console();
-                if (console == null) {
-                    System.out.println("Couldn't get Console instance");
-                    System.exit(0);
-                }
-                //   console.printf("Testing password%n");
-                String inpPass = String.valueOf(console.readPassword("Enter your  password: "));
-                pw.println(inpPass);
-                pw.close();*/
                         break;
                     case 3:
                         System.out.println("Thank You for using TRELLO.");
@@ -199,6 +190,31 @@ public class Main  {
                         break;
                     case 3:
                         CreateBoards.displayBoard();
+                        int opt;
+                       // Scanner in = new Scanner(System.in);
+                        try {
+                            do {
+                                System.out.println("===========================================");
+                                System.out.println("|           WELCOME TO TRELLO             |");
+                                System.out.println("===========================================");
+                                System.out.println("| Options:                                |");
+                                System.out.println("|        1. Login                         |");
+                                System.out.println("|        2. Sign up                       |");
+                                System.out.println("|        3. Exit                          |");
+                                System.out.println("===========================================");
+                                System.out.println("Enter your option here:");
+
+                                opt = in.nextInt();
+                                switch (opt){
+
+                                }
+                            }while (opt != 3);
+                        }
+                        catch (InputMismatchException e) {
+                            System.out.println("Enter a valid number value");
+                            //chooseOptions();
+                            trelloWelcome();
+                            }
                         System.out.println("Do you want to edit Board?");
                         Scanner choose = new Scanner(System.in);
                         String options = choose.next();
