@@ -111,19 +111,7 @@ public class Lists {
                 File newFile = new File(tmpFileName);
                 newFile.renameTo(oldFile);
 
-                // text file cardCreate to write the contents of card such as members, description and time create
-              /*  FileWriter fw = new FileWriter("BoardDetails.txt", true);
-                PrintWriter p = new PrintWriter(fw);
-
-
-                p.print("List Details");
-
-
-                p.println("Title: " + listTitle + ", Created at: " + ft.format(dNow));
-
-                p.close();
-                System.out.println("Description: " + listTitle + ", Created at: " + ft.format(dNow));*/
-
+              
             System.out.println("Do you want to Create Card?y/n");
             String ans = "";
             Scanner input = new Scanner(System.in);
@@ -152,23 +140,7 @@ public class Lists {
         System.out.println("1. Enter Description");
         Scanner in = new Scanner(System.in);
         cardDesc = in.nextLine();
-        /*System.out.println("Do you want to add comment?y/n");
-        String ans = "";
-        Scanner input = new Scanner(System.in);
-        ans = input.next();
-        boolean fl = false;
-        if (ans.equals("y")) {
-            fl = true;
-            System.out.println("2.Add comment");
-
-            Scanner in1 = new Scanner(System.in);
-            comment = in1.next();
-
-        } else if (ans.equals("n")) {
-
-        } else {
-            System.out.println("Enter a valid option only");
-        }*/
+        
         String oldFileName = "BoardDetails.txt";
         String tmpFileName = "tmp_try.txt";
 
@@ -186,9 +158,7 @@ public class Lists {
                     f = true;
                 if (f) {
                     bw.write("Card : " + cardDesc + "\n");
-                    //if (fl){
-                      //  bw.write("Comment: " + comment + "by: " + Main.inpUser);
-                    //}
+                    
                     f = false;
                 }
             }
@@ -217,129 +187,6 @@ public class Lists {
         newFile.renameTo(oldFile);
         return true;
     }
-    //createCard method
-  /*  public static boolean createCard() {
-        System.out.println("Do you want to create a new Card");
-        Scanner chooser = new Scanner(System.in);
-
-        String option = chooser.next();
-
-        if (option.equals("Y") || option.equals("y")) {
-            is_Card_Created = true;
-            System.out.println("1. Enter Description");
-            Scanner in = new Scanner(System.in);
-            cardDesc = in.next();
-            System.out.println("Do you want to add comment?y/n");
-            String ans = "";
-            Scanner input = new Scanner(System.in);
-            ans = input.next();
-            if (ans.equals("y")) {
-
-                System.out.println("2.Add comment");
-
-
-                Scanner in1 = new Scanner(System.in);
-                comment = in1.next();
-                val = 1;
-                if (val == 1) {
-                    try {
-                        System.out.println("3.Add Members");
-                        System.out.println("Do you want to add members");
-                        Scanner opt = new Scanner(System.in);
-                        String choose = opt.next();
-                        if (choose.equals("Y") || choose.equals("y")) {
-                            System.out.println("Enter the number of members you want to add");
-                            Scanner in11 = new Scanner(System.in);
-                            int mem = in11.nextInt();
-
-
-                            members = new String[mem];
-                            for (int i = 0; i < mem; i++) {
-                                Scanner in2 = new Scanner(System.in);
-                                members[i] = in2.nextLine();
-                            }
-                        } else if (choose.equals("N") || choose.equals("n")) {
-
-
-                            members = new String[]{""};
-
-                        }
-
-
-                    } catch (InputMismatchException e) {
-                        System.out.println("enter value of integer data type");
-                    }
-                }
-            } else if (ans.equals("n")) {
-                try {
-                    System.out.println("3.Add Members");
-                    System.out.println("Do you want to add members");
-                    Scanner opt = new Scanner(System.in);
-                    String choose = opt.next();
-                    if (choose.equals("Y") || choose.equals("y")) {
-                        System.out.println("Enter the number of members you want to add");
-                        Scanner in11 = new Scanner(System.in);
-                        int mem = in11.nextInt();
-
-
-                        members = new String[mem];
-                        for (int i = 0; i < mem; i++) {
-                            Scanner in2 = new Scanner(System.in);
-                            members[i] = in2.nextLine();
-                        }
-                    } else if (choose.equals("N") || choose.equals("n")) {
-
-
-                        members = new String[]{""};
-
-                    }
-
-
-                } catch (InputMismatchException e) {
-                    System.out.println("enter value of integer data type");
-                }
-            } else {
-                System.out.println("Enter a valid option only");
-                AddList_Menu.AddList_Menu_Choice();
-            }
-            try {
-                // To get the date and time info of when the card is created
-                card_dNow = new Date();
-                SimpleDateFormat ft =
-                        new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
-
-
-                // text file cardCreate to write the contents of card such as members, description and time create
-                FileWriter fw = new FileWriter("BoardDetails.txt", true);
-                PrintWriter p = new PrintWriter(fw);
-
-
-                p.print("Card Details");
-
-
-                p.println("Description: " + cardDesc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(card_dNow));
-
-                p.close();
-                System.out.println("Description: " + cardDesc + ", Comments: " + comment + ", Members: " + Arrays.toString(members) + ", Created at: " + ft.format(card_dNow));
-
-                System.out.println("A New Card has been Added!");
-                System.out.println();
-                System.out.println();
-                AddList_Menu.AddList_Menu_Choice();
-
-
-            } catch (IOException ex) {
-
-                ex.printStackTrace();
-            }
-        } else if (option.equals("N") || option.equals("n")) {
-            //System.exit(0);
-            is_Card_Created = false;
-
-            AddList_Menu.AddList_Menu_Choice();
-
-        }
-        return is_Card_Created;
-    }*/
+   
 
 }
