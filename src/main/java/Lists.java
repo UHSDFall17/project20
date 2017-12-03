@@ -47,7 +47,7 @@ public class Lists {
         option = choose.next();
 
 
-        if (option.equals("Y") || option.equals("y")) {
+        if ("Y".equals(option) || "y".equals(option)) {
 
             String listTitle = "";
             System.out.println("Enter the List Description");
@@ -108,7 +108,7 @@ public class Lists {
             String ans = "";
             Scanner input = new Scanner(System.in);
             ans = input.next();
-            if (ans.equals("y")) {
+            if ("y".equals(ans)) {
                 // createCard method
                 createCardUnderList(listTitle);
 
@@ -118,7 +118,7 @@ public class Lists {
                 AddList_Menu.AddList_Menu_Choice(Boardname);
             }
 
-        } else if (option.equals("N") || option.equals("n")) {
+        } else if ("N".equals(option) || "n".equals(option)) {
             //System.exit(0);
             AddList_Menu.AddList_Menu_Choice(Boardname);
 
