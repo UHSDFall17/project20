@@ -1,5 +1,4 @@
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Lists {
@@ -8,9 +7,7 @@ public class Lists {
     static String members[];
     static int val = 0;
     static String TeamChoose;
-    private static Date dNow;
-    private static Date card_dNow;
-
+   
     private static String cardDesc;
     private static String option;
     static boolean is_List_Created;
