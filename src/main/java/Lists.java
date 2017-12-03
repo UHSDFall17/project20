@@ -2,16 +2,11 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Lists {
-    static String desc = "";
-    static String comment = "";
-    static String members[];
-    static int val = 0;
-    static String TeamChoose;
+   
    
     private static String cardDesc;
     private static String option;
-    static boolean is_List_Created;
-    static boolean is_Card_Created;
+    public static boolean is_List_Created;
 
     public static boolean display(String Boardname){
         boolean found = false;
