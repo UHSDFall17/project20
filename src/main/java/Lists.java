@@ -1,8 +1,5 @@
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lists {
@@ -59,10 +56,8 @@ public class Lists {
             System.out.println("Enter the List Description");
             Scanner in = new Scanner(System.in);
             listTitle = in.nextLine();
-            dNow = new Date();
 
-            SimpleDateFormat ft =
-                    new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+           
                 String oldFileName = "BoardDetails.txt";
                 String tmpFileName = "tmp_try.txt";
 
